@@ -11,6 +11,7 @@
 
 #include "xtensor-fmt/xarray.hpp"
 #include "xtensor-fmt/xview.hpp"
+#include "xtensor-fmt/xtensor.hpp"
 
 int main(int argc, char *argv[]) {
   // Eat warnings, also safer
@@ -25,6 +26,13 @@ int main(int argc, char *argv[]) {
   auto view2d = xt::view(arr2d, xt::range(0, 3), xt::range(0, 3));
   fmt::print("1D View: {}\n", view1d);
   fmt::print("2D View: {}\n", view2d);
+
+  // Tensors
+  xt::xtensor<double, 1> x1 = {1, 2, 3, 4, 5};
+  xt::xtensor<double, 2> x2 = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+
+  fmt::print("x1 = {}\n", x1);
+  fmt::print("x2 = {}\n", x2);
 
   return EXIT_SUCCESS;
 }
