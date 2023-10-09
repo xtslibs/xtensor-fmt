@@ -56,3 +56,8 @@ _deps += dependency('xtensor')
 # --------------------- Projects
 subdir('CppCore')
 _incdirs += [ 'CppCore' ]
+
+xtensor_fmt_dep = declare_dependency(
+  include_directories: _incdirs,
+  link_with: _linkto,
+  dependencies: _deps)
